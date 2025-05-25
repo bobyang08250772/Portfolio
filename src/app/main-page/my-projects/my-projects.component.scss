@@ -1,0 +1,280 @@
+@use "./../../../style/variables" as *;
+
+.my-projects-container {
+    margin-top: 50px;
+   
+    h2 {
+        @include h2Title();
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .my-projects-content {
+        
+        nav {
+            @include standardPadding();
+            @include dFlex($jc:flex-start);
+            >div {
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                padding: 30px;
+                height: 104px;
+                box-sizing: border-box;
+                @include dFlex();
+                @media screen and (max-width: 1200px) {
+                    padding: 20px;
+                }
+                &.active {
+                    background-color: $base-gray;
+                    >span {
+                        color: $base-white;
+                    }
+                }
+                &:hover {
+                    >span {
+                        color: $base-white;
+                    }
+                }
+                >span {
+                    font-size: 30px;
+                    font-weight: 500;
+                    color: $base-blue;
+                    @media screen and (max-width: 1200px) {
+                        font-size: 27px;
+                    }
+                }
+            }
+            @media screen and (max-width:1200px) {
+                justify-content: center;
+            }
+        }
+        .project {
+          
+            @include standardPadding();
+            @include dFlex($ai: flex-start);
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: $base-white;
+            background-color: $base-gray;
+            .project-left {
+                width: 50%;
+                @include dFlex($fd:column, $gap:30px);
+                .tab-li {
+                    @include dFlex($ai: flex-start, $gap:20px);
+                    
+                    >img {
+                        position: relative;
+                        top:5px;
+                    }
+                    .right-of-logo {
+                        >div {
+                            @include dFlex($gap: 10px, $jc: flex-start);
+                            >h4{
+                                font-size: 28px;
+                                font-weight: 400;
+                            }
+                            >span {
+                                font-size: 18px;
+                            }
+                        }
+                        >p {
+                            font-size: 18px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+            .project-right {
+                width: 50%;
+                @include dFlex($gap: 10px, $fd: column);
+                >h5 {
+                    font-size: 18px;
+                    text-align: center;
+                    padding: 10px 0;
+                }
+                .technologies {
+                    position: relative;
+            
+                    @include dFlex($gap: 20px);
+                    .tech-logo{
+                        img {
+                            height: 36px;
+                        }
+                    }
+                }
+                .project-img {
+                    position: relative;
+                    width: 100%;
+                    height: 225px;
+                    text-align: center;
+                    >img {
+                        position: relative;
+                        border-radius: 30px;
+                        width: 100%;
+                        z-index: 1;
+                        height: 225px;
+                       
+                    }
+                    >p {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: $base-blue;
+                        font-size: 30px;
+                        z-index: 2;
+                    }
+                }
+                .project-right-footer {
+                    position: relative;
+                    @include dFlex($gap:20px);
+                    button {
+                        background-color: transparent;
+                        height: 48px;
+                        
+                        border-radius: 30px;
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            line-height: 48px;
+                            padding: 0 30px;
+                            box-sizing: border-box;
+                        }
+                        &:nth-child(1) {
+                            color: $base-black;
+                            background-color: $base-blue;
+                            &:hover {
+                                background-color: $base-white;
+                            }
+                        }
+                        &:nth-child(2) {
+                            color: $base-blue;
+                            border: 1px solid $base-blue;
+                            &:hover {
+                                background-color: $base-white-012;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width:1200px) {
+                flex-direction: column-reverse;
+                gap: 50px;
+                align-items: center;
+                .project-left {
+
+                    align-items: flex-start;
+                    width: 100%;
+                }
+                .project-right {
+                    width: 100%;
+                }
+            }
+        }
+        .team-player {
+            >h4 {
+                font-size: 30px;
+                font-weight: 500;
+                color: $base-blue;
+                padding: 50px;
+                text-align: center;
+
+            }
+            .team-player-content {
+                margin: 0 auto;
+                width: calc(100% - 113px - 113px);
+                
+                .team-player-content-wrapper {
+                    width: 100%;
+                    @include dFlex($gap: 20px, $jc: center);
+                    flex-wrap: wrap;
+
+                    .player {
+                        opacity: .5;
+                        width: 380px;
+                        height: 380px;
+                        flex-shrink: 0;
+                        @include dFlex();
+                        background: {
+                            image: url('./../../../assets/img/ref-shape.png');
+                            repeat: no-repeat;
+                            size: contain;
+                            position: center;
+                        };
+                        &:hover {
+                            background-image: url('./../../../assets/img/ref-shape-hover.png');
+                        }
+                        .player-content {
+                            
+                            width: 80%;
+                            @include dFlex($fd: column);
+                            .player-name {
+                                font-size: 26px;
+                                font-weight: 500;
+                                color: $base-white;
+                            }
+                            .player-project {
+                                font-size: 18px;
+                                font-weight: 400;
+                                span{
+                                    &:nth-child(1) {
+                                        color: $base-white;
+                                    }
+                                    &:nth-child(2) {
+                                        color: $base-blue;
+                                    }
+                                }
+                            }
+                            .player-reference {
+                                color: $base-white;
+                                padding: 20px 0;
+                            }
+                            .player-linkedIn {
+                                font-size: 18px;
+                                font-weight: 400;
+                                color: $base-blue;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+    }
+}
+
+@keyframes from-right{
+    from {
+        transform: translateX(10vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes from-left{
+    from {
+        transform: translateX(-5vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-img-005 {
+    animation: from-right .5s ease-in-out;
+}
+.animate-img-075 {
+    animation: from-right .75s ease-in-out;
+}
+.animate-img-010 {
+    animation: from-right 1s ease-in-out;
+}
+.animate-img-005-from-left {
+    animation: from-left .5s ease-in-out;
+}

@@ -1,0 +1,184 @@
+<div id="my-projects-mobile" class="my-projects-container wide-screen">
+    <h2>{{ 'project.title' | translate}}</h2>
+    <div class="my-projects-content">
+        <nav>
+            @for (project of projects; let index = $index; track $index) {
+                <div class="pointer" (click)="switchProject(index)" [class.active]="currentTab == index">
+                    <span>{{index + 1}}. {{ 'project.project' | translate}} </span>
+                </div>
+            }
+            
+            <div class="pointer"  (click)="switchProject(projects.length)"  [class.active]="currentTab == projects.length">
+                <span>{{projects.length + 1}}. {{ 'project.project' | translate}}</span>
+            </div>
+        </nav>
+        @for (project of projects; let index = $index; track $index) {
+            <div class="project"  *ngIf="currentTab == index">
+                <div class="project-top">
+                    <div class="project-top-title"> {{ project.name}}</div>
+                    <div class="technologies" #animatedEl1>
+                        <div class="technologies-top">
+                            <span>{{ 'project.technologies'|translate}}:</span>
+                            <span class="technologies-arr"> 
+                                @for (t of project.technologiesName; let i = $index; track $index) {
+                                    {{t}}
+                                    @if (i != project.technologiesName.length - 1) {
+                                        ,
+                                    }
+                                }
+                            </span>
+                        </div>
+                       
+                        <span class="duration"><span>{{"project.duration" | translate}}</span>: {{ project.duration }} <span>{{"project.weeks" | translate}}</span></span>
+                    </div>
+                    <div class="project-img" #animatedEl2>
+                        <img src="assets/img/{{project.url}}" alt="" style="width: 400px !important;  ">
+                    </div>
+                    
+                </div>
+                <div class="project-bottom" #animatedEl4>
+                    <div class="project-about tab-li" (style.display)="currentTab==0?'flex': 'none'">
+                        <div class="right-of-logo">
+                            <div>
+                                <img src="assets/img/ellipse-small-blue.png" alt="">
+                                <h4>{{"project.about" | translate}}</h4>
+                                
+                            </div>
+                            <p>
+                                {{ project.introduction }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-work-process  tab-li">
+                        
+                        <div class="right-of-logo">
+                            
+                            <div>
+                                <img class="logo"  src="assets/img/ellipse-small-blue.png" alt="">
+                                <h4>{{"project.workprocess" | translate}}</h4>
+                            </div>
+                            <p>
+                                {{ project.workProcess }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-experience  tab-li">
+                        <div class="right-of-logo">
+                            <div>
+                                <img class="logo"  src="assets/img/ellipse-small-blue.png" alt="">
+                                <h4>{{"project.workexperience" | translate}}</h4>
+                            </div>
+                            <p>
+                                {{ project.workExperience }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-bottom-footer" #animatedEl3>
+                        <button class="pointer">
+                            <a href="{{project.weburl}}" target="_blank">Live Test</a>
+                        </button>
+                        <button class="pointer">
+                            <a href="{{project.giturl}}"  target="_blank">GitHub</a>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        }
+        
+        <div class="project project-comingsoon" *ngIf="currentTab == projects.length">
+            <div class="project-top">
+                <div class="project-top-title"> DA Bubble</div>
+                <div class="technologies" #animatedEl1>
+                    <div class="technologies-top">
+                        <span>{{ 'project.technologies'|translate}}: </span>
+                        <span class="technologies-arr">TypeScript, HTML, CSS, FireBase, RXJS</span>
+                    </div> 
+                    
+                    <span class="duration"><span>{{"project.duration" | translate}}</span>: 6 <span>{{"project.weeks" | translate}}</span></span>
+                </div>
+                <div class="project-img" #animatedEl2>
+                    <p>{{ "project.comingproject.comingsoon" | translate}}</p>
+                    <img src="assets/img/comingsoon.png" alt="" style="width: 400px !important;">
+                </div>
+                
+            </div>
+            <div class="project-bottom"  #animatedEl4>
+                <div class="project-about tab-li">
+                    
+                    <div class="right-of-logo">
+                        <div>
+                            <img src="assets/img/ellipse-small-blue.png" alt="">
+                            <h4>{{"project.about" | translate}}</h4>
+                            
+                        </div>
+                        <p>
+                            {{'project.dababble.about' | translate}}
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="team-player">
+            <span appScrollBounce="my-projects" #scrollRef="appScrollBounce" style="display: none"></span>
+            <h4 class="team-player-title">
+                {{ 'player.needateamplayer' | translate}}
+            </h4>
+            <p class="team-player-subtitle">
+                {{ 'player.needateamplayer2' | translate}}
+            </p>
+            <div class="team-player-content">
+                <div class="team-player-content-wrapper">
+                    <div class="player" [appScrollAnimate]="{animateCss:'bubble-out-075'}">
+                        <div class="player-content">
+                            <div class="player-name">Maximillian Mischner</div>
+                            <div class="player-project">
+                                <span> {{ 'player.project' | translate}} </span><span class="pointer" (click)="toProject('join')">Join</span>
+                            </div>
+                            <div class="player-reference">
+                                {{ 'player.reference3' | translate}}
+                            </div>
+                            <div class="player-linkedIn">
+                                <a href="https://www.linkedin.com/">{{ 'player.linkedinprofile' | translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player" [appScrollAnimate]="{animateCss:'bubble-out-075'}">
+                        <div class="player-content">
+                            <div class="player-name">Sebastian Klossek</div>
+                            <div class="player-project">
+                                <span>{{ 'player.project' | translate}} </span><span class="pointer" (click)="toProject('join')">Join</span>
+                            </div>
+                            <div class="player-reference">
+                                {{ 'player.reference2' | translate}}
+                            </div>
+                            <div class="player-linkedIn">
+                                <a href="https://www.linkedin.com/">{{ 'player.linkedinprofile' | translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player"  [appScrollAnimate]="{animateCss:'bubble-out-075'}">
+                        <div class="player-content">
+                            <div class="player-name">Sahra Meuller</div>
+                            <div class="player-project">
+                                <span>{{ 'player.project' | translate}} </span>
+                                <span class="pointer" (click)="toProject('pollo')">El Pollo Loco</span>
+                            </div>
+                            <div class="player-reference">
+                                {{ 'player.reference1' | translate}}
+                            </div>
+                            <div class="player-linkedIn">
+                                <a href="https://www.linkedin.com/">{{ 'player.linkedinprofile' | translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

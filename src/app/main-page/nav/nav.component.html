@@ -1,0 +1,38 @@
+
+<div class="hide-on-mobile">
+    <div class="nav-wrapper">
+        <div class="nav wide-screen" #stickEl>
+            <div class="content">
+                <div class="logo">
+                    <div class="logo-img"></div>
+                    <div class="logo-name">X.Yang</div>
+                    <div class="logo-position">Developer</div>
+                </div>
+                <div class="items">
+                    <li> 
+                        <a [appScrollBounce]="'why-me'"  [offsetY]="104">
+                            <span class="pointer">{{ "nav.whyme" | translate}}</span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a [appScrollBounce]="'my-skills'" [offsetY]="104">
+                            <span class="pointer">{{ "nav.myskills" | translate}}</span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a [appScrollBounce]="'my-projects'" [offsetY]="104">
+                            <span class="pointer">{{ "nav.myprojects" | translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [appScrollBounce]="'contact-me'"  [offsetY]="104"> 
+                            <span class="pointer">{{ "nav.contact" | translate}}</span>
+                        </a>
+                    </li>
+                </div>
+                <app-lang-switcher></app-lang-switcher>
+            </div>
+        </div>
+    </div>
+
+</div>

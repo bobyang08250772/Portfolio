@@ -1,0 +1,74 @@
+<div class="legal-notice-container">
+    <app-header [title]="'footer.legalnotice' | translate">
+        
+    </app-header>
+    
+    <div class="legal-notice-content wide-screen">
+        @if (currentLang == 'en') {
+           
+            <div class="content">
+                <div class="legal-notice-subcontainer">
+                    <h1>Legal Notice</h1>
+                    <h2 style="margin-top: 0;">Information pursuant to § 5 TMG</h2>
+                    <p>Xin Yang <br>
+                        Adlbert-Stifter-Str. 12<br>
+                        91080 Uttenreuth</p>
+            
+                    <h2>Contact</h2>
+                    <p>Phone: +49 174 496 99 06<br>
+                        Email: yangxin08250772&#64;gmail.com</p>
+                    <h2>Credits</h2>
+                    <p>The project was tested and supported by the mentors from the <a class="developer-akademie" href="https://developerakademie.com/">Developer Akademie</a>.</p>
+                    <p>The design was created by Verselina from the <a class="developer-akademie" href="https://developerakademie.com/">Developer Akademie</a>.</p><br/>
+                    <p>Special thanks to all contributors and testers.</p>
+                    <h2>Data Protection Notice</h2>
+                    <p>This legal notice was created using the legal notice generator from  activeMind AG</p>
+                </div>
+            </div>
+        } @else if (currentLang == 'zh') {
+           
+            <div class="content">
+                <div class="legal-notice-subcontainer">
+                    <h1>法律声明</h1>
+                    <h2 style="margin-top: 0;">根据德国《电信媒体法》第 5 条的信息</h2>
+                    <p>杨鑫 <br>
+                        Adlbert-Stifter-Str. 12<br>
+                        91080 Uttenreuth</p>
+            
+                    <h2>联系方式</h2>
+                    <p>电话: +49 174 496 99 06<br>
+                        邮箱: yangxin08250772&#64;gmail.com</p>
+                    <h2>致谢</h2>
+                    <p>本项目得到了 <a class="developer-akademie" href="https://developerakademie.com/">Developer Akademie</a> 导师的测试与支持。</p>
+                    <p>设计由 <a class="developer-akademie" href="https://developerakademie.com/">Developer Akademie</a> 的 Verselina 提供。</p><br/>
+                    <p>特别感谢所有参与者和测试人员。</p>
+                    <h2>数据保护提示</h2>
+                    <p>本网站的法律声明使用Activemind AG的Impressums-Generator生成。</p>
+                </div>
+            </div>
+        } @else () {
+            
+            <div class="content" >
+                <div class="legal-notice-subcontainer">
+                    <h1>Impressum</h1>
+                    <h2 style="margin-top: 0;">Angaben gemäß § 5 TMG</h2>
+                    <p>Xin Yang <br>
+                        Adlbert-Stifter-Str. 12<br>
+                        91080 Uttenreuth</p>
+        
+                    <h2>Kontakt</h2>
+                    <p>Telefon: +49 174 496 99 06<br>
+                        E-Mail: yangxin08250772&#64;gmail.com</p>
+                    <h2>Danksagung</h2>
+                    <p>Das Projekt wurde getestet und unterstützt von den Mentoren von der  <a class="developer-akademie" href="https://developerakademie.com/"> Developer Akademie</a>. </p>
+                    <p>Design stammt von Verselina von der <a class="developer-akademie" href="https://developerakademie.com/"> Developer Akademie</a>. </p><br/>
+                    <p>Besonderer Dank gilt allen Mitwirkenden und Testern.</p>
+                    <h2>Hinweise zum Datenschutz</h2>
+                    <p>Das Impressum wurde mit dem Impressums-Generator der activeMind AG erstellt.</p>
+                </div>
+            </div>
+        }
+     </div>
+    <app-footer></app-footer>
+</div>
+

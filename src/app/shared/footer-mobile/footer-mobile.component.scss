@@ -1,0 +1,108 @@
+@use "./../../../style/variables" as *;
+
+footer {
+    height: 243px;
+    background-color: $base-blue;
+    @include dFlex();
+    @include standardPaddingMobile();
+    .footer-content {
+        width: 100%;
+        height: 182px;
+        @include dFlex($fd: column, $jc:space-between);
+       
+        .left {
+            width: 100%;
+            .logo {
+                @include dFlex($fd: column, $jc: center);
+                .logo-img {
+                    width: 60px;
+                    height: 38px;
+                    background: {
+                        image: url('./../../../assets/img/logo-on-menu.png');
+                        repeat: no-repeat;
+                        position: center;
+                    };
+                }
+                .logo-name {
+                    font-size: 16px;
+                    color: $base-white;
+                }
+                .logo-position {
+                    font-size: 12px;
+                    color: $base-lightgray;
+                }
+            }
+            
+            
+
+        }
+        .middle {
+            width: 100%;
+            @include dFlex($gap:20px);
+            .img {
+            
+                width: 30px;
+                height: 30px;
+                background: {
+                    repeat: no-repeat;
+                    size: contain;
+                    position: center;
+                }
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .github {
+                background-image: url('./../../../assets/img/github-mobile.png');
+                &:hover {
+                    background-image: url('./../../../assets/img/github-white.png') 
+                }
+            }
+            .email {
+                background-image: url('./../../../assets/img/mai-mobile.svg');
+                &:hover {
+                    background-image: url('./../../../assets/img/mail-white.png') 
+                }
+            }
+            .linkedin {
+                background-image: url('./../../../assets/img/linkedin-mobile.png');
+                &:hover {
+                    background-image: url('./../../../assets/img/linkdin-white.png') 
+                }
+            }
+        }
+        .right {
+            @include dFlex($gap:10px, $ai: flex-start, $jc: space-between);
+            width: 100%;
+            .legal-notice {
+                a {
+                    color: $base-lightgray;
+                    font-weight: 400;
+                    font-size: 18px;
+                    &:hover {
+                        color: $base-white-050;
+                    }
+                    &:active {
+                        color: $base-white;
+                    }
+                }
+            }
+            .copy-right {
+                flex-shrink: 0;
+                color: $base-lightgray;
+                font-weight: 400;
+                font-size: 18px;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .right {
+        @include dFlex($gap:0 !important, $fd: column !important, $ai:center !important) ;
+    }
+}
+

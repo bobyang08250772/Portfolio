@@ -1,0 +1,68 @@
+@use "./../../style/variables" as *;
+
+
+.private-policy-container {
+    position: relative;
+    min-height: 100vh;
+    .private-policy-content {
+        min-height: calc(100vh - 104px - 214px);
+        margin-top: 104px;
+        .content {
+            @include standardPadding();
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: $base-white;
+            h1 {
+                display: none;
+                text-align: center;
+            }
+            h2 {
+                margin-top: 20px;
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+            h3 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            h4 {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            p, li {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            a {
+                color: rgb(235, 102, 88);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .private-policy-content {
+        min-height: calc(100vh - 104px - 243px) !important;
+        .content {
+            @include standardPaddingMobile();
+    
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .private-policy-content { 
+        .content {
+            h1 {
+                font-size: 1.5em;
+                display: block !important;
+                margin-bottom: 20px;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    }
+}

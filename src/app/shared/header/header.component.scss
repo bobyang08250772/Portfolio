@@ -1,0 +1,94 @@
+@use "./../../../style/variables" as *;
+
+.header-wrapper {
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: $base-blue;
+    height: 104px;
+}
+
+header {
+    height:100%;
+    background-color: $base-blue;
+    color: $base-black;
+    @include standardPadding();
+    @include dFlex($gap: 10px);
+
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+
+    .header-ele {
+        flex: 1;
+        white-space: nowrap;
+    }
+    .title {
+        text-align: center;
+    }
+    .langs {
+        @include dFlex($jc: flex-end);
+    }
+    .go-back {
+        a {
+            @include dFlex($jc: flex-start, $gap: 5px);
+        }
+        
+        color: $base-black;
+        &:hover {
+            color: $base-white-050;
+        }
+        &:active {
+            color: $base-white;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        @include standardPaddingMobile();
+        h1 {
+            font-size: 1.8em;
+        }
+        .go-back {
+            span {
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(1) {
+                    transform: scale(1.5);
+                }
+                
+            }
+        }
+        
+    }  
+    
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        @include standardPaddingMobile();
+        h1 {
+            font-size: 1.5em;
+            display: none;
+        }
+       
+        .go-back {
+            span {
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(1) {
+                    transform: scale(1.5);
+                }
+                
+            }
+        }
+        
+    }  
+    
+}

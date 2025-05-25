@@ -1,0 +1,16 @@
+<div class="header-wrapper">
+    <header>
+        <div class="go-back header-ele pointer">
+            <a (click)="goBack()">
+                <span>&lt;</span>
+                <span>{{'header.goback' | translate }}</span>
+            </a>
+            
+        </div>
+        <h1 class="title header-ele">{{ title }}</h1>
+        <div class="langs header-ele">
+            <app-lang-switcher></app-lang-switcher>
+        </div>
+    
+    </header>
+</div>

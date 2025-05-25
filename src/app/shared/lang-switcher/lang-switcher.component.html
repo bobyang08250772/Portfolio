@@ -1,0 +1,5 @@
+<div class="langs">
+    @for (lang of langs; track $index) {
+        <span class="pointer" (click)="changeLange(lang)" [class.active]="lang == currentLange"> {{ lang  }}</span>
+    }
+</div>

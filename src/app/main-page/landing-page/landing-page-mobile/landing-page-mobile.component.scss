@@ -1,0 +1,181 @@
+
+@use "./../../../../style/variables" as *;
+
+.landing-page-extra {
+ 
+    height: 50px;
+}
+
+.content {
+    background-color: $base-black;
+    padding-bottom: 0;
+    height: 100vh;
+    @include standardPaddingMobile();
+    @include dFlex($fd: column,$jc: flex-start);
+    
+}
+
+.content-top {
+    @include dFlex($jc: space-between);
+    position: fixed;
+    top:0;
+    padding: 25px 25px 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: $base-black;
+    z-index: 996;
+    
+    .logo {
+        @include dFlex($fd: column, $jc: center);
+        .logo-img {
+            width: 60px;
+            height: 38px;
+            background: {
+                image: url('./../../../../assets/img/logo.png');
+                repeat: no-repeat;
+                position: center;
+
+                
+            };
+
+            &:hover {
+                background: {
+                    size: cover;
+                    image: url('./../../../../assets/img/logo-hover.png');
+                    repeat: no-repeat;
+                    position: center;
+                };
+            }
+        }
+        .logo-name {
+            font-size: 16px;
+            color: $base-white;
+        }
+        .logo-position {
+            font-size: 12px;
+            color: $base-blue;
+        }
+    }
+
+    .burger {
+        .burger-img {
+            width: 30px;
+            height: 30px;
+            background: {
+                image: url('./../../../../assets/img/burger-menu.png');
+            };
+
+            &.close {
+                background: {
+                    image: url('./../../../../assets/img/burger-menu-close.png') !important;
+                };
+            }
+        }
+    }
+
+}
+
+.content-middle {
+    
+    width: 100%;
+    min-height: calc(100vh - 72px - 25px);
+    position: relative;
+    top: calc(72px + 25px);
+    @include dFlex($fd: column, $jc: space-around);
+
+    .img-wrapper {
+        border-bottom-left-radius: 40%;
+       border-bottom-right-radius: 55%;
+        overflow: hidden;
+        @include dFlex();
+        background-image: url('./../../../../assets/img/shape.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+
+        img {
+            width: 400px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        @media screen and (max-height: 750px) {
+            img {
+                height: 40vh;
+                object-fit: contain;
+            }
+        }
+    }
+    
+
+    .title-logo-wrapper {
+        @include dFlex($fd: column, $jc: space-around);
+        width: 100%;
+
+        .title {
+            padding: 40px 0;
+            color: $base-white;
+            width: 100%;
+
+            .name {
+                width: 100%;
+                text-align: center;
+                font-size: 64px;
+            }
+            .position {
+                width: 100%;
+                font-size: 32px;
+                text-align: center;
+            }
+            @media screen and (max-width: 900px) {
+                
+                .name {
+                    font-size: 40px;
+                }
+                .position {
+                    font-size: 24px;
+                }
+
+            }
+         }
+    }
+
+    .arrow-wrapper{
+
+        .arrow-down {
+            width: 30px;
+            height: 60px;
+            background: {
+                image: url('./../../../../assets/img/arrow-down.png');
+                size: contain;
+                repeat: no-repeat;
+            };
+            &:hover {
+                background: {
+                    image: url('./../../../../assets/img/arrow-down-hover.png');
+                };
+            }
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 1200px), screen and (min-height: 1000px)  {
+    .content-left {
+        display: none !important;
+    }
+    .content-right {
+        width: 100%;
+        justify-content: space-around;
+        .img-wrapper-small {
+            display: flex;
+        }
+        .logo {
+            position: absolute;
+            left: 0;
+            top: 20px
+        }
+    }
+}
+

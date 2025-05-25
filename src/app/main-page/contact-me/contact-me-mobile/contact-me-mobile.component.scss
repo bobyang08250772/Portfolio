@@ -1,0 +1,218 @@
+@use "./../../../../style/variables" as *;
+
+.contact-container {
+    position: relative;
+    margin-bottom: 50px;
+    @include standardPaddingMobile();
+    @include dFlex($fd: column);
+    margin-top: 50px;
+
+   
+    h2 {
+        @include h2TitleMobile();
+        margin-bottom: 20px;
+    }
+    .contact-content {
+        width: 100%;
+        @include dFlex($fd: column, $gap:20px);
+        .contact-header {
+            color: $base-white;
+            @include dFlex($gap: 20px, $ai: flex-start, $fd: column);
+            width: 100%;
+            .header-top{
+                @include dFlex($gap: 10px, $fd: column, $ai: flex-start);
+                width: 100%;
+                .header-top-email, .header-top-phone { 
+                    a {
+
+                        @include dFlex($gap: 10px);
+                        span {
+
+                        }
+                        &:hover {
+                            span {
+                                color: $base-blue;
+                            }
+                            .mail.img {
+                                background-image: url('./../../../../assets/img/contact-email-hover.png');
+                            }
+                            .tel.img {
+                                background-image: url('./../../../../assets/img/contact-phone-hover.png');
+                            }
+                        }
+                        &:active {
+                            filter: brightness(0.8);
+                        }
+                        .img {
+                            width: 26px;
+                            height: 30px;
+                            flex-shrink: 0;
+                        }
+                        .mail {
+                            background: {
+                                image: url('./../../../../assets/img/contact-email.png');
+                            }
+                        }
+                        .tel {
+                            background: {
+                                image: url('./../../../../assets/img/contact-phone.png');
+                            }   
+                        }
+                    }
+
+                }
+            }
+            .header-middle {
+
+            }
+            .header-bottom {
+                padding: 10px 0;
+                font-size: 20px;
+                width: 100%;
+                color: $base-blue;
+                text-align: center;
+            }
+        }
+        .contact-form {
+            width: 100%;
+            
+            form {
+                width: 100%;
+                @include dFlex($fd: column, $gap:20px);
+                .form-name-mail {
+                    @include dFlex($gap: 20px);
+                    width: 100%;
+                    @media screen and (max-width:1200px) {
+                        flex-direction: column;
+                    }
+
+                }
+                .form-field {
+                    width: 100%;
+                    
+                    @include dFlex($fd: column, $ai: flex-start);
+                    .form-label {
+                        color: $base-blue;
+                        margin-left: 30px;
+                        font-size: 14px;
+                        &-error {
+                            @extend .form-label;
+                            color: $base-red;
+                        }
+                    }
+                    .form-input{
+                        color: $base-white;
+                        box-sizing: border-box;
+                        padding: 0 30px;
+                        width: 100%;
+                        border: 1px solid $base-blue;
+                        height: 60px;
+                        border-radius: 30px;
+                        background-color: transparent;
+                        &:focus {
+                            background-color: $base-gray;
+                        }
+                    }
+                    .form-input::placeholder {
+                        color: $base-white-050;
+                    }
+                    .form-input-error {
+                        border: 1px solid $base-red;
+                    }
+                    .form-input-error::placeholder {
+                        color: $base-red;
+                    }
+                    
+                }
+    
+                .form-message {
+                    textarea {
+                        width: 100%;
+                        height: 147px !important;
+                        padding: 20px 30px !important;
+                    
+                        resize:none;
+                    }
+                   
+                }
+                .privacy-policy {
+                    width: 100%;
+                    color: $base-white;
+                    @include dFlex($jc: flex-start, $gap: 10px);
+                    .cb {
+                        width: 24px;
+                        height: 24px;
+                        flex-shrink: 0;
+                        background: {
+                            image: url('./../../../../assets/img/cb.png');
+                            size: contain;
+                            repeat: no-repeat;
+                        }
+
+                        &:hover {
+                            background-image: url('./../../../../assets/img/cb-hover.png');
+                        }
+                        &.checked {
+                            background-image: url('./../../../../assets/img/cb-checked.png');
+                        }
+
+                    }
+                    span {
+                        font-size: 14px;
+                        a {
+                            color: $base-blue;
+                        }
+                    }
+                    
+
+                }
+                .success-msg {
+                    color: $base-green;
+                }
+                .send-btn {
+                    @include dFlex($jc: flex-end);
+                    width: 100%;
+                    button.deaktive{
+                        color: $base-white-050;
+                        border: 1px solid $base-white-050;
+                        height: 48px;
+                        padding: 0 40px;
+                        border-radius: 30px;
+                    }
+                    button:disabled{
+                        color: $base-white-050;
+                        border: 1px solid $base-white-050;
+                        height: 48px;
+                        padding: 0 40px;
+                        border-radius: 30px;
+                    }
+                    button {
+                        color: $base-blue;
+                        border: 1px solid $base-blue;
+                        height: 48px;
+                        padding: 0 40px;
+                        border-radius: 30px;
+                    }
+                }
+            }
+            
+        }
+
+        .goup-arrow {
+            margin: 50px 0;
+            width: 30px;
+            height: 60px;
+            background: {
+                image: url('./../../../../assets/img/arrow-up.png');
+                size: contain;
+                repeat: no-repeat;
+            };
+            &:hover {
+                background: {
+                    image: url('./../../../../assets/img/arrow-up-hover.png');
+                };
+            }
+        }
+        
+    }
+}

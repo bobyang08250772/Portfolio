@@ -1,0 +1,54 @@
+@use "./../../style/variables" as *;
+
+
+.legal-notice-container {
+    position: relative;
+    min-height: 100vh;
+    .legal-notice-content {
+        min-height: calc(100vh - 204px - 104px);
+        padding-top: 104px;
+        .content {
+            @include standardPadding();
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: $base-white;
+            h1 {
+                display: none;
+            }
+            h2 {
+                margin-top: 20px;
+            }
+            a {
+                color: rgb(235, 102, 88);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .legal-notice-content {
+        min-height: calc(100vh - 104px - 243px) !important;
+        .content {
+            @include standardPaddingMobile();
+    
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .legal-notice-content { 
+        .content {
+            h1 {
+                display: block !important;
+                margin-bottom: 20px;
+            }
+            h2 {
+                font-size: 1.2em;
+                &:nth-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

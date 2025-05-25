@@ -1,0 +1,162 @@
+@use "./../../../style/variables" as *;
+
+.my-skills-container {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    @include dFlex($fd: column, $gap:20px);
+    h2 {
+        @include h2Title();
+    }
+    .my-skills-content {
+        @include dFlex($gap:20px, $ai: flex-start);
+        width: 80%;
+        .content-left {
+            color: $base-blue;
+            width: 440px;
+            
+            .reservoir {
+                @include dFlex($gap: 40px, $jc: flex-start);
+                flex-wrap: wrap;
+                .skill {
+                    width: 78px;
+                    @include dFlex($fd: column, $jc:left, $gap:10px);
+                }
+            }
+            
+        }
+        .content-right {
+            color: $base-white;
+            @include dFlex($fd: column, $gap: 10px);
+
+            .current-learning {
+                width: 380px;
+                height: 370px;
+                padding: 50px;
+                padding-top: 0;
+                @include dFlex($gap: 20px, $fd: column);
+                background: {
+                    image: url('./../../../assets/img/ref-shape-hover.png');
+                    repeat: no-repeat;
+                    size: contain;
+                    position: center;
+                };
+                > span {
+                   font-size: 18px;
+                }
+                p {
+                    font-size: 18px;
+                    padding:0 10px;
+                }
+                .skills {
+                    font-size: 14px;
+                    @include dFlex($gap: 20px);
+                    div {
+                        @include dFlex($fd: column);
+                    }
+                }
+                &:hover {
+                    background: {
+                        image: url('./../../../assets/img/ref-shape.png');
+                    }
+                }
+            }
+        }
+
+    }
+    @media screen and (max-width:1200px) {
+        .my-skills-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    } 
+}
+
+.my-skills-container-mobile {
+    margin-top: 50px;
+    width: 100%;
+    @include standardPaddingMobile();
+    box-sizing: border-box;
+    @include dFlex($fd: column, $gap:20px);
+    h2 {
+        @include h2TitleMobile();
+    }
+    .my-skills-content {
+        @include dFlex($gap:10px, $fd: column);
+       
+        width: 100%;
+        .content-top {
+            color: $base-blue;
+            width: 440px;
+            max-width: 100%;
+            
+            
+            .reservoir {
+                @include dFlex($gap: 40px);
+                flex-wrap: wrap;
+                .skill {
+                    width: 42px;
+                    @include dFlex($fd: column, $jc:left, $gap:10px);
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+        .content-bottom {
+            color: $base-white;
+            width: 440px;
+            max-width: 100%;
+            @include dFlex($fd: column, $gap: 10px);
+            .content-bottom-title {
+                color: $base-blue;
+                padding: 20px 0;
+            }
+            .content-bottom-content {
+                @include dFlex($gap:10px);
+                p {
+
+                }
+                .current-learning {
+                    width: 119px;
+                    height: 96px;
+                    padding: 20px;
+                    @include dFlex($gap: 20px, $fd: column);
+                    background: {
+                        image: url('./../../../assets/img/ref-shape-hover.png');
+                        repeat: no-repeat;
+                        size: contain;
+                        position: center;
+                    }
+                    .skills {
+                        font-size: 14px;
+                        @include dFlex($gap: 20px);
+                        div {
+                            @include dFlex($fd: column);
+                        }
+                    }
+                    &:hover {
+                        background: {
+                            image: url('./../../../assets/img/ref-shape.png');
+                        }
+                    }
+                }
+            }
+            .talk-button {
+                padding-top: 20px;
+                button {
+                    height: 43px;
+                    background-color: $base-blue;
+                    color: $base-gray;
+                    border-radius: 30px;
+                    padding: 0 30px;
+                }
+               
+            }
+            
+        }
+
+    }
+    
+}
+

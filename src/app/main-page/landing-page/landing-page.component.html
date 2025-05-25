@@ -1,0 +1,54 @@
+<div class="landing-page-extra wide-screen" id="landing-page-extra" style="display: none;">
+</div>
+<div class="hide-on-desktop">
+    <app-landing-page-mobile></app-landing-page-mobile>
+</div>
+<div class="hide-on-mobile">
+    <div class="content wide-screen" id="landing-page">
+        <div class="content-left">
+            <div class="img-wrapper">
+                <img src="assets/img/profile4.png" alt="">
+            </div>
+            
+            
+        </div>
+        
+        <div class="content-right">
+            <div class="links-wrapper">
+                <div class="link-email pointer">
+                    <a href="mailto:yangxin08250772@gmail.com"></a>
+                </div>
+                <div class="link-github pointer">
+                    <a href="https://github.com/bobyang08250772" target="_blank"></a>
+                </div>
+                <div class="link-linkedin pointer">
+                    <a href="https://www.linkedin.com/" target="_blank"></a>
+                </div>
+            </div>
+    
+            <div class="img-wrapper-small">
+                <img src="assets/img/profile-rectangle.png" alt="">
+            </div>
+            
+            <div class="title-logo-wrapper">
+                <div class="logo">
+                    <div class="logo-img"></div>
+                    <div class="logo-name">X.Yang</div>
+                    <div class="logo-position">Developer</div>
+                </div>
+                <div class="title">
+                    <div class="name">{{ 'landingPage.name' | translate}}</div>
+                    <div class="position">{{ 'landingPage.position' | translate}}</div>
+            </div>
+            </div>
+            <div class="arrow-wrapper" [appScrollAnimate]="{animateCss:'move-down'}">
+                <div [appScrollBounce]="'why-me'"  [offsetY]="104" class="arrow-down pointer">
+    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+

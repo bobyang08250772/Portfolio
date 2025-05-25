@@ -1,0 +1,155 @@
+@use "./../../../style/variables" as *;
+
+.why-me-extra {
+    height: 220px;
+}
+
+.why-me-container {
+    @include dFlex($fd: column, $gap:20px);
+    @include standardPaddingMobile();
+
+    h2 {
+        @include h2Title();
+        @media screen and (max-width: 899px) {
+            @include h2TitleMobile();
+        }
+    }
+    .content {
+        @include dFlex($fd:column, $gap:20px);
+        
+        max-width: 100%;
+        .location-introduction {
+            @include dFlex($gap: 50px, $ai: flex-start);
+            width: 70%;
+            @media screen and (max-width: 899px) {
+                width: 100%;
+            }
+            
+            
+            .location {
+                @include dFlex($jc:flex-end);
+                width: 50%;
+                .img-wrapper {
+                    img {
+                        width: 74px;
+                        height: 64px;
+                    }
+                }
+                .location-text {
+                    width: 470px;
+                    font-size: 30px;
+                    flex: 0 0 auto;
+                    span {
+                        &:nth-child(1) {
+                            color: $base-blue;
+                        }
+                        &:nth-child(2) {
+                            color: $base-white;
+                        }
+                        &:nth-child(3) {
+                            color: $base-blue;
+                        }
+                    }
+                }
+            }
+
+            .introduction {
+                font-size: 18px;
+                width: 50%;
+                color: $base-white;
+                
+            }
+
+            @media screen and (max-width:1200px) {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                .location {
+                    width: 500px;
+                    height: 60px;
+                    justify-content: center;
+                }
+                .introduction {
+                    width: 500px;
+                    justify-content: center;
+                }
+                    
+                
+            }
+            @media screen and (max-width:899px) {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                .location {
+                    width: 100%;
+                    height: 30px;
+                    padding: 20px 0;
+                    justify-content: center;
+                    gap: 20px;
+                    .img-wrapper {
+                        
+                        img {
+                            width: 32px;
+                            height: fit-content;
+                            max-height: 52px;
+                        }
+                        img.suitcase {
+                            width: 25px;
+                            height: 45px;
+                        }
+                    }
+                    .location-text {
+                        font-size: 18px;
+                        width: fit-content;
+                        @media screen and (max-width: 400px) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .introduction {
+                    width: 500px;
+                    max-width: 100%;
+                    justify-content: center;
+                    font-size: 16px;
+                }
+            }
+        }
+        .talk-button {
+            @include dFlex($jc:flex-end);
+            width: 65%;
+            padding-bottom: 20px;
+            
+            button {
+                color: $base-blue;
+                background-color: transparent;
+                width: 134px;
+                height: 48px;
+                border-radius: 30px;
+                border: 1px solid $base-blue;
+                &:hover {
+                    background-color: $base-white-012;
+                }
+            }
+
+            @media screen and (max-width: 899px) {
+                display: none;
+            }
+        }
+        @media screen and (max-width:1200px) {
+            .talk-button {
+                justify-content: center;
+            }
+        }
+        @media screen and (max-width: 899px) {
+            width: 440px;
+        }
+
+    }
+   
+}
+
+@media screen and (max-width:1200px) { 
+    .why-me-container {
+        gap: 0;
+    }
+}

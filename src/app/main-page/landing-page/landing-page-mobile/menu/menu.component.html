@@ -1,0 +1,30 @@
+<div class="menu-wrapper" *ngIf="isShowable">
+    <div class="menu-overlay" (click)="clickOverlay()"></div>
+    <div class="menu-content" [ngStyle]="{'width.px': wh, 'height.px': wh, 'top.px': top, 'left.px': left}">
+        <ul>
+            <li class="active"> 
+                <a [appScrollBounce]="'why-me'"  [offsetY]="72+25" (click)="this.isShowable = false; this.isShowableChange.emit(this.isShowable)">
+                    <span class="pointer">{{ "nav.whyme" | translate}}</span>
+                </a>
+            </li>
+            <li> 
+                <a [appScrollBounce]="'my-skills-mobile'" [offsetY]="72+25"  (click)="this.isShowable = false; this.isShowableChange.emit(this.isShowable)">
+                    <span class="pointer">{{ "nav.myskills" | translate}}</span>
+                </a>
+            </li>
+            <li> 
+                <a [appScrollBounce]="'my-projects-mobile'" [offsetY]="72+25"  (click)="this.isShowable = false; this.isShowableChange.emit(this.isShowable)">
+                    <span class="pointer">{{ "nav.myprojects" | translate}}</span>
+                </a>
+            </li>
+            <li>
+                <a [appScrollBounce]="'contact-me-mobile'"  [offsetY]="72+25"  (click)="this.isShowable = false; this.isShowableChange.emit(this.isShowable)"> 
+                    <span class="pointer">{{ "nav.contact" | translate}}</span>
+                </a>
+            </li>
+            <li>
+                <app-lang-switcher></app-lang-switcher>
+            </li>
+        </ul>
+    </div>
+</div>

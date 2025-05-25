@@ -1,0 +1,21 @@
+@use "./../../../style/variables" as *;
+.langs {
+    @include dFlex($gap:5px);
+    color: $base-black;
+    span {
+        padding: 5px;
+        &:hover {
+            color: $base-white;
+        }
+        &.active{
+            color: $base-white;
+            background: {
+                image: url('./../../../assets/img/ellipse-small.png');
+                size: contain;
+                repeat: no-repeat;
+                position: center;
+            };
+        }
+    }
+    
+}

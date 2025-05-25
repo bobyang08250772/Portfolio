@@ -1,0 +1,50 @@
+<div class="why-me-extra wide-screen" id="why-me-extra" style="display: none;">
+</div>
+<div id="why-me" class="why-me-container normal-container wide-screen">
+    <h2>{{'intro.title' | translate}}</h2>
+    <div class="content">
+        <div class="location-introduction">
+            
+            <div class="location"  [style.display]="currentText==0? 'flex': 'none'">
+                <div class="img-wrapper">
+                    <img  class="hide-on-mobile" src="assets/img/location.png" alt="">
+                    <img  class="hide-on-desktop" src="assets/img/location-mobile.png" alt="">
+                </div>
+                <div class="location-text">
+                    <span>{{ typedPart1 }}</span>
+                    <span> {{ typedPart2 }}</span>
+                    <span> ..|</span>
+                </div>
+            </div> 
+            <div class="location"  [style.display]="currentText==1? 'flex': 'none'">
+                <div class="img-wrapper">
+                    <img class="hide-on-mobile"  src="assets/img/computer.png" alt="">
+                    <img class="hide-on-desktop" src="assets/img/remote-mobile.png" alt="">
+                </div>
+                <div class="location-text">
+                    <span>{{ typedPart1 }}</span>
+                    <span> {{ typedPart2 }}</span>
+                    <span> ..|</span>
+                </div>
+            </div> 
+            <div class="location" [style.display]="currentText==2? 'flex': 'none'">
+                <div class="img-wrapper">
+                    <img class="hide-on-mobile" src="assets/img/suitcase.png" alt="">
+                    <img class="suitcase" class="hide-on-desktop" src="assets/img/suitcase-mobile.png" alt="">
+                </div>
+                <div class="location-text">
+                    <span>{{ typedPart1 }}</span>
+                    <span> {{ typedPart2 }}</span>
+                    <span> ..|</span>
+                </div>
+            </div> 
+            <div class="introduction">
+                {{'intro.introduction' | translate}}
+                  </div>
+        </div>
+        <div class="talk-button ">
+            <button class="pointer" [appScrollBounce]="'contact-me'" [offsetY]="104">{{'intro.talk' | translate}}</button>
+        </div>
+    </div>
+   
+</div>

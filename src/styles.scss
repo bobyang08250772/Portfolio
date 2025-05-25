@@ -1,0 +1,197 @@
+@use 'style/variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+      
+}
+
+button {
+    border: unset;
+    font-family: "Anta", "Noto Sans Sc", sans-serif;
+    background-color: transparent;
+}
+
+textarea, input { 
+    outline: none;
+    font-family: "Anta", "Noto Sans Sc", sans-serif;
+    font-size: 18px;
+    @media screen and (max-width: 1200px) {
+        font-size: 16px;
+    }
+ }
+
+ 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $base-gray inset !important;
+    -webkit-text-fill-color: $base-white !important;
+    caret-color: $base-white;
+}
+
+
+@font-face {
+    font-family: "Anta";
+    src: url("./assets/fonts/Anta-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Josefin Sans";
+    src: url("./assets/fonts/Anta-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Noto Sans SC";
+    src: url("./assets/fonts/NotoSansSC-VariableFont_wght.ttf");
+}
+
+
+body {
+    font-family: "Anta", "Noto Sans Sc", sans-serif;
+    background-color: $base-black;
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+
+
+.wide-screen {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+a, a:hover, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.img-preloader {
+    width: 0;
+    height: 0;
+}
+
+.normal-container {
+    background-color: $base-black;
+}
+
+@media screen and (max-width: 899px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
+/*Animation*/
+@keyframes opcity-effect {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.opacity-0-1 {
+    animation: opcity-effect 0.5s ease-in-out;
+}
+
+
+@keyframes bubble-effect {
+    0% {
+        opacity:0.5;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.bubble-out-005 {
+    animation: bubble-effect 0.5s ease-in-out;
+}
+.bubble-out-075 {
+    animation: bubble-effect .5s ease-in-out forwards;
+}
+.bubble-out-010 {
+    animation: bubble-effect 1s ease-in-out ;
+}
+
+@keyframes move-down {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(15px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.move-down {
+    animation: move-down .75s ease-in-out;
+}
+
+@keyframes move-up {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.move-up {
+    animation: move-up .75s ease-in-out;
+}
+
+
+@keyframes elegant-rotate {
+    0% {
+        transform: perspective(600px) rotateY(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: perspective(600px) rotateY(360deg);
+        opacity: 1;
+      }
+    
+  }
+.rotate {
+    animation: elegant-rotate .75s ease-in-out;
+}
+
+
