@@ -54,7 +54,6 @@ export class ContactMeComponent {
 
   onSumbmitNgForm(ngForm: NgForm) {
     if(ngForm.valid && ngForm.submitted) {
-      console.log(this.contact);
     }
   }
 
@@ -69,7 +68,7 @@ export class ContactMeComponent {
           error: (error) => {
             console.error('Server error:', error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => {},
         });
     } 
   }

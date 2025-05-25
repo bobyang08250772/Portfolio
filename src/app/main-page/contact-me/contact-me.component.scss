@@ -39,8 +39,10 @@
             }
             .header-right{
                 @include dFlex($gap: 10px, $fd: column, $ai: flex-start, $jc: flex-start);
-                // width: 50%;
-                flex-shrink: 0;
+                width: 50%;
+                @media screen and (max-width:1000px) {
+                    flex-shrink: 0;
+                }
                 .header-right-email, .header-right-phone { 
                     a {
 

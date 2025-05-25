@@ -113,6 +113,8 @@
                 padding: 20px 0;
             }
             .content-bottom-content {
+                perspective: 600px;
+                -webkit-perspective: 600px;
                 @include dFlex($gap:10px);
                 p {
 

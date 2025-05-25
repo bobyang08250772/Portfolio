@@ -93,7 +93,7 @@
                                 {{'contact.successmsg' | translate}}
                             </div>
                         } @else {
-                            <button [disabled]="!isChecked" type="submit" class="pointer">{{ 'contact.send' | translate}}</button>
+                            <button [disabled]="!isChecked || contact.msg.length < 1 || contact.name.length < 1 || contact.email.length < 1" type="submit" class="pointer">{{ 'contact.send' | translate}}</button>
                         }
                     </div>
                 </form>

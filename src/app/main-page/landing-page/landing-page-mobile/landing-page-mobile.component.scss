@@ -19,7 +19,7 @@
     @include dFlex($jc: space-between);
     position: fixed;
     top:0;
-    padding: 25px 25px 0;
+    padding: 25px;
     box-sizing: border-box;
     width: 100%;
     background-color: $base-black;
@@ -78,14 +78,14 @@
 .content-middle {
     
     width: 100%;
-    min-height: calc(100vh - 72px - 25px);
+    min-height: calc(100vh - 72px - 50px);
     position: relative;
-    top: calc(72px + 25px);
+    top: calc(72px + 50px);
     @include dFlex($fd: column, $jc: space-around);
 
     .img-wrapper {
         border-bottom-left-radius: 40%;
-       border-bottom-right-radius: 55%;
+        border-bottom-right-radius: 55%;
         overflow: hidden;
         @include dFlex();
         background-image: url('./../../../../assets/img/shape.png');
@@ -141,7 +141,6 @@
     }
 
     .arrow-wrapper{
-
         .arrow-down {
             width: 30px;
             height: 60px;
