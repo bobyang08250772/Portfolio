@@ -26,7 +26,6 @@ export class MyProjectsComponent implements OnDestroy, AfterViewInit {
   @ViewChild('animatedEl3', { static: false }) animatedEl3!: ElementRef;
   @ViewChild('animatedEl4', { static: false }) animatedEl4!: ElementRef;
   @ViewChild('scrollRef') scrollDirective!: ScrollBounceDirective;
-  @ViewChildren('test111', { read: ElementRef }) fadeElements!: QueryList<ElementRef>;
 
   currentTab: number = 0;
   projects: Project[] = [];
@@ -107,6 +106,7 @@ export class MyProjectsComponent implements OnDestroy, AfterViewInit {
     }
 
     setTimeout(() => {
+      this.scrollDirective.targetId = 'my-projects';
       this.scrollDirective.offsetY = 104;
       this.scrollDirective?.onClick();
     }, 0);
@@ -151,20 +151,6 @@ export class MyProjectsComponent implements OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     this.registerScrollTrigger();
 
-   
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            console.log('enter view');
-            
-          } else {
-            console.log('out of view');
-          }
-        }
-      }, { threshold: 0.1 });
-  
-      this.fadeElements.forEach(el => observer.observe(el.nativeElement));
-    
     
   }
 

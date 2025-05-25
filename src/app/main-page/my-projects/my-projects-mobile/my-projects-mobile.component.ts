@@ -106,6 +106,7 @@ export class MyProjectsMobileComponent implements OnDestroy, AfterViewInit {
     }
 
     setTimeout(() => {
+      this.scrollDirective.targetId = 'my-projects-mobile';
       this.scrollDirective.offsetY = 104;
       this.scrollDirective?.onClick();
     }, 0);
