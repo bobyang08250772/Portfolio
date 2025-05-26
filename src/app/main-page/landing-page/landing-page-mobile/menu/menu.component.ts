@@ -22,11 +22,7 @@ export class MenuComponent {
   }
 
   clickOverlay() {
-    console.log('click overlay');
-    
     this.isShowable = false;
     this.isShowableChange.emit(this.isShowable);
   }
-
-
 }
