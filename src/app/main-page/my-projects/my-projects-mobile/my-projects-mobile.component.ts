@@ -150,8 +150,6 @@ export class MyProjectsMobileComponent implements OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.registerScrollTrigger();
-
-   
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
@@ -164,8 +162,6 @@ export class MyProjectsMobileComponent implements OnDestroy, AfterViewInit {
       }, { threshold: 0.1 });
   
       this.fadeElements.forEach(el => observer.observe(el.nativeElement));
-    
-    
   }
 
   ngOnDestroy(): void {
